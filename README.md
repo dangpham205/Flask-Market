@@ -1,5 +1,5 @@
 # Flask-Market
-A web app you can use to:
+A web app you can use to:<br>
   +Sign Up<br>
   +Log In<br>
   +Log Out<br>
