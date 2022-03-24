@@ -1,0 +1,71 @@
+<style>
+    .modal-content {
+      background-color: #212121
+    }
+</style>
+  
+  <!-- More Info -->
+  <div class="modal fade" id="Modal-MoreInfo-{{item.item_id}}"
+       tabindex="-1"
+       aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ModalLabel">
+            <!-- -->
+            {{item.item_name}}
+          </h5>
+          <button type="button" class="close"
+                  data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" style="color: white;;">x</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            {{item.item_description}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary"
+                  data-dismiss="modal">Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<!-- Purchase Confirm -->
+<div class="modal fade" id="Modal-PurchaseConfirm-{{ item.item_id }}"
+     tabindex="-1"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalLabel">
+          <!-- -->
+            Purchase
+        </h5>
+        <button type="button" class="close"
+                data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" style="color: white;">x</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="" method="POST">
+          {{ purchaseForm.hidden_tag() }}
+          <h4 class="text-center">
+            Are you sure you want to buy <b>{{ item.item_name }}</b> for <b>{{ item.item_price }}$</b> ?
+          </h4>
+          <br>
+          <h6 class="text-center">
+            Click <b>Purchase</b> to buy this product
+          </h6>
+
+          <input type="hidden" id="purchased_item" name="purchased_item" value="{{ item.item_name }}">
+          {{ purchaseForm.submit(class="btn btn-block btn-success") }}
+        </form>
+      </div>
+      <div class="modal-footer">
+        
+      </div>
+    </div>
+  </div>
+</div>

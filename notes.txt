@@ -1,0 +1,33 @@
+tạo db:
+from market.models import db
+db.create_all()
+from market.models import User,Item
+
+
+tạo form:
+pip install flask-wtf
+pip install wtforms
+
+khi xài form trong flask app:
+cần có security key để có thể render đc form vì cta đang cho user
+nhập data nên cần lớp bảo mật này
+vô cmd
+python
+>>> import os
+>>> os.urandom(12).hex()		để tạo 1 chuỗi ngẫu nhiên
+rồi vô file init và khai báo
+app.config['SECRET_KEY'] = '7a5ac56807771b915a0e6656'   
+
+phong chong hacker
+ngay dưới tag form trong register.html:
+           {{ form.hidden_tag() }}
+
+pip install email_validator
+pip install flask_bcrypt
+pip install flask_login
+
+Trong forms.py:
+python sẽ tìm các hàm bắt đầu bằng chữ validate_
+sau đó sẽ thực hiện validate bằng cách tìm xem trong form
+có field nào trùng với tên sau dấu _ (ở đây là username)
+vì vậy trong context này kh cần gọi hàm validate_username()
