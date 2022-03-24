@@ -1,6 +1,6 @@
 # Flask-Market
 A web app you can use to:
-  +Sign Up
+  +Sign Up\n
   +Log In
   +Log Out
   +Create Products
